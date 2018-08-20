@@ -1,17 +1,28 @@
+:root {
+    --color-text: #F3F4F4;
+    --color-bg: #273333;
+    --color-border: #515E5F;
+    --color-link: #dee1e1;
+    --color-visited: #c8cccc;
+    --color-hover: #f3f4f4;
+}
+
 html {
-    color: #F3F4F4;
-    background: #273333;
-    font-size: 1em;
-    line-height: 1.4;
+    color: var(--color-text);
+    background: var(--color-bg);
+    font-size: .9em;
+    line-height: 1.5;
 }
 
 ::-moz-selection {
-    background: pink;
+    background: var(--color-text);
+    color: var(--color-bg);
     text-shadow: none;
 }
 
 ::selection {
-    background: pink;
+    background: var(--color-text);
+    color: var(--color-bg);
     text-shadow: none;
 }
 
@@ -19,46 +30,90 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #515E5F;
-    margin: 1em 0;
+    border-top: 1px solid var(--color-border);
+    margin: 2em 0;
     padding: 0;
 }
 
 body {
-    font: 16px/26px "Input Sans Reg", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font: 1rem/1.6 "Input Sans Reg", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    width: 90%;
+    max-width: 80ch;
+    margin: 0 auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Input Serif Comp Bd", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-style: Normal;
     font-weight: Normal;
 }
 
-strong, b, a {
+strong,
+b,
+a {
     font-family: "Input Sans Bd", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-style: Normal;
     font-weight: Normal;
 }
 
-em, i, address {
-    color: #dee1e1;
+em,
+i,
+address {
+    color: var(--color-link);
     font-style: normal;
 }
 
-a:link {
-    color: #dee1e1;
-}
-a:visited {
-    color: #c8cccc;
-}
-a:hover: {
-    color: #f3f4f4;
-}
-a:active {
-    transform: translate(0,1px);
+svg,
+img {
+    width: 100%;
+    max-width: 25ch;
 }
 
-.wrapper {
-    width: 90%;
-    margin: 0 5%;
+a {
+    display: inline-block;
+}
+
+a:link {
+    color: var(--color-link);
+}
+
+a:visited {
+    color: var(--color-visited);
+}
+
+a:hover {
+    color: var(--color-hover);
+}
+
+a:active {
+    transform: translate3d(0, 1px, 0);
+}
+
+summary {
+    list-style: none;
+    position: relative;
+    padding-left: 2ch;
+    cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    display: block;
+    transform: translateY(-50%);
+    content: '+';
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+details[open] summary::before {
+    content: '-';
 }
