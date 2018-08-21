@@ -117,3 +117,11 @@ summary::before {
 details[open] summary::before {
     content: '-';
 }
+
+.no-details summary {
+    padding-left: 0;
+}
+
+.no-details summary::before {
+    content: '';
+}
